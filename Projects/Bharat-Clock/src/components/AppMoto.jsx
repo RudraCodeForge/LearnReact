@@ -1,6 +1,8 @@
 const AppMoto =()=>{
   return(
-    <h2>This is the clock showes the time of Bharat at all times.</h2>
+    <p className="lead text-info mb-5 px-3">
+      This clock shows the time of Bharat at all times.
+    </p>
   )
 }
 export default AppMoto;
