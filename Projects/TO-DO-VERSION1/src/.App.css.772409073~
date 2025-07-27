@@ -1,0 +1,10 @@
+h1{
+  color:blue;
+  font-size:30px;
+  font-weight:bold;
+}
+input{
+  height:30px;
+  border:2px solid black;
+}
+div

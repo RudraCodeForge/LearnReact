@@ -1,0 +1,17 @@
+h1{
+  color:blue;
+  font-size:30px;
+  font-weight:bold;
+}
+input{
+  height:30px;
+  border:2px solid black;
+}
+div{
+  margin: 20px 5px;
+}
+button{
+  text-align:center;
+  width:70px;
+  height:30px;
+}
