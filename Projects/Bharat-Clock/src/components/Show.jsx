@@ -1,3 +1,4 @@
+import {useState} from 'react';
 const Show = () => {
   const FullDate = new Date();
   let date = FullDate.toLocaleDateString();
@@ -7,10 +8,10 @@ const Show = () => {
     minute: '2-digit',
     second: '2-digit'
   });
-  console.log("Today date is :-", date);
+  const [ctime, setCtime] = useState(time);
   return (
     <h3>
-      Today date is: {date} and time is: {time}
+      Today date is: {date} and time is: {ctime}
     </h3>
   );
 };
