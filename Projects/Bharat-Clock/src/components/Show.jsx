@@ -1,7 +1,12 @@
 const Show = () => {
   const FullDate = new Date();
-  let date =FullDate.toLocaleDateString() ;
-  let time =FullDate.toLocaleTimeString()
+  let date = FullDate.toLocaleDateString();
+  let time = FullDate.toLocaleTimeString('en-US', { 
+    hour12: true,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
   console.log("Today date is :-", date);
   return (
     <h3>
