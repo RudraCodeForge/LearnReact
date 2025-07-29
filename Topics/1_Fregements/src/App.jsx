@@ -1,10 +1,15 @@
+import Fregement from './components/Fregement';
+import Maps from './components/Maps';
+import Condition from './components/Condition';
 
-function App() {
-  return (
+
+const App = () =>{
+  return(
     <>
-      <p>Hello from fregements</p>
+      <Fregement/>  
+      <Maps/>
+      <Condition/>
     </>
   )
 }
-
-export default App
+export default App;
