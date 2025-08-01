@@ -5,7 +5,7 @@ const PASS_DATA =({items}) => {
           <li className="list-group-item active" aria-current="true">
             Healthy Food
           </li>
-          {arr.map((no) => (
+          {items.map((no) => (
             <li key = {no} className="list-group-item">{no}</li>
           ))}
         </ul>
