@@ -1,12 +1,21 @@
-
 import AppName from "./components/AppName";
 import AddToDo from "./components/AddToDo";
 import TodoList from "./components/TodoList";
-import './App.css';
+import "./App.css";
 
 function App() {
+  let TODO = [
+    { task: "BUY MILK", date: "12/02/2005" },
+    { task: "LEARN REACT", date: "25/05/2025" },
+    { task: "Complete Bootstrap Design", date: "15/09/2024" },
+  ];
   return (
-    <div className="min-vh-100" style={{background: 'linear-gradient(135deg, #74b9ff 0%, #0984e3 100%)'}}>
+    <div
+      className="min-vh-100"
+      style={{
+        background: "linear-gradient(135deg, #74b9ff 0%, #0984e3 100%)",
+      }}
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
@@ -14,9 +23,10 @@ function App() {
               <AppName />
               <AddToDo />
               <div className="todo-list">
-                <TodoList task="Buy Milk" date="12/02/2005" />
-                <TodoList task="Learn React" date="25/07/2025" />
-                <TodoList task="Complete Bootstrap Design" date="15/01/2024" />
+                {TODO.map((item) => {
+                  console.log(item.task,item.date);
+                  <TodoList task={item.task} date={item.date} />;
+                })}
               </div>
               <div className="empty-state">
                 <i className="fas fa-tasks me-2"></i>
