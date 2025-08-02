@@ -25,7 +25,7 @@ function App() {
               <div className="todo-list">
                 {TODO.map((item) => {
                   console.log(item.task,item.date);
-                  <TodoList task={item.task} date={item.date} />;
+                  return <TodoList task={item.task} date={item.date} key={item.task} />;
                 })}
               </div>
               <div className="empty-state">
