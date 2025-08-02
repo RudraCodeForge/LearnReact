@@ -2,7 +2,7 @@ import Fregement from './components/Fregement';
 import Maps from './components/Maps';
 import Condition from './components/Condition';
 import REACT_PROPS from './components/props/REACT_PROPS'
-
+import './App.css';
 const App = () =>{
   return(
     <>

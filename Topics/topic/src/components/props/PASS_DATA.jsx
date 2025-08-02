@@ -1,4 +1,7 @@
 const PASS_DATA =({items}) => {
+  if (items.length === 0){
+    return <h1> NO HEALTHY FOOD AVAILABLE </h1>
+  }
   return(
     <>
       <ul className="list-group mb-4">
