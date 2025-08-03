@@ -1,4 +1,6 @@
-
+import Heading from './components/Heading';
+import Display from './components/Display';
+import Button from './components/Button
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.css';
@@ -31,18 +33,8 @@ function App() {
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-gradient">
       <div className={`${styles.calculator} card shadow-lg`}>
         <div className="card-body p-4">
-          <h2 className="text-center mb-4 text-primary fw-bold">Calculator</h2>
-          
-          {/* Display */}
-          <div className={`${styles.display} mb-4`}>
-            <input 
-              type="text" 
-              className={`form-control ${styles.displayInput}`}
-              value={display}
-              readOnly
-            />
-          </div>
-
+          <Heading/>
+          <Display/>
           {/* Buttons Grid */}
           <div className={styles.buttonGrid}>
             {buttons.map((button, index) => (
