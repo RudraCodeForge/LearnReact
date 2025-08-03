@@ -1,6 +1,5 @@
 import Heading from './components/Heading';
 import Display from './components/Display';
-import Button from './components/Button
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.css';
@@ -34,7 +33,7 @@ function App() {
       <div className={`${styles.calculator} card shadow-lg`}>
         <div className="card-body p-4">
           <Heading/>
-          <Display/>
+          <Display value={display}/>
           {/* Buttons Grid */}
           <div className={styles.buttonGrid}>
             {buttons.map((button, index) => (
