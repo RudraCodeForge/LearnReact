@@ -1,0 +1,105 @@
+
+.calculatorContainer {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  width: 100%;
+  height: 80px;
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-weight: 600;
+}
+
+.display:focus {
+  outline: none;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.buttonsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.button {
+  height: 70px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.numberButton {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  color: #333;
+}
+
+.numberButton:hover {
+  background: linear-gradient(145deg, #f8f8f8, #e8e8e8);
+}
+
+.operatorButton {
+  background: linear-gradient(145deg, #ff6b6b, #ee5a52);
+  color: white;
+}
+
+.operatorButton:hover {
+  background: linear-gradient(145deg, #ff5252, #e04848);
+}
+
+.functionButton {
+  background: linear-gradient(145deg, #4ecdc4, #44a08d);
+  color: white;
+}
+
+.functionButton:hover {
+  background: linear-gradient(145deg, #45b7b8, #3d8b85);
+}
+
+.equalsButton {
+  background: linear-gradient(145deg, #feca57, #ff9ff3);
+  color: white;
+  grid-column: span 2;
+}
+
+.equalsButton:hover {
+  background: linear-gradient(145deg, #fed330, #ff7675);
+}
+
+.zeroButton {
+  grid-column: span 2;
+}
+
+.calculatorTitle {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

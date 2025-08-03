@@ -27,3 +27,15 @@ exposeLocalhost = true
 [[ports]]
 localPort = 5174
 externalPort = 3000
+
+[workflows]
+runButton = "Run Calculator"
+
+[[workflows.workflow]]
+name = "Run Calculator"
+author = 33217820
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Projects/Calculator && npm run dev"
