@@ -1,5 +1,7 @@
 import Heading from './components/Heading';
 import Display from './components/Display';
+import Buttons from './components/Buttons';
+
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.css';
@@ -34,17 +36,7 @@ function App() {
         <div className="card-body p-4">
           <Heading/>
           <Display value={display}/>
-          {/* Buttons Grid */}
-          <div className={styles.buttonGrid}>
-            {buttons.map((button, index) => (
-              <button 
-                key={index}
-                className={`btn ${styles.calcButton} ${styles[button.type]} ${button.span ? styles[`span${button.span}`] : ''}`}
-              >
-                {button.text}
-              </button>
-            ))}
-          </div>
+          <Buttons buttons={buttons} />
         </div>
       </div>
     </div>

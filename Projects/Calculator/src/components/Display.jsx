@@ -1,11 +1,11 @@
-import display from '../styles/Display.module.css';
-const Display = ({ value = '0' }) => {
+import styles from '../styles/Display.module.css';
+const Display = (props) => {
   return (
-    <div className={`${display.display} mb-4`}>
+    <div className={`${styles.display} mb-4`}>
       <input
         type="text"
-        className={`form-control ${display.displayInput}`}
-        value={value}
+        className={`form-control ${styles.displayInput}`}
+        value={props.value}
         readOnly
       />
     </div>
