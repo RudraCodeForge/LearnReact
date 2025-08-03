@@ -1,5 +1,4 @@
-import styles from './Calculator.module.css';
-
+import styles from './App.module.css';
 function App() {
   const buttons = [
     'C', '/', '*', '7',
@@ -9,28 +8,13 @@ function App() {
   ];
 
   return (
-    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center" 
-         style={{background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
-      <div className={styles.calculatorContainer}>
-        <h2 className={styles.calculatorTitle}>Calculator</h2>
-        
-        <input 
-          type="text" 
-          value={display}
-          readOnly
-          className={styles.display}
-        />
-        
-        <div className={styles.buttonsGrid}>
-          {buttons.map((button, index) => (
-            <button
-              key={index}
-              className={getButtonClass(button)}
-            >
-            </button>
-          ))}
-        </div>
-      </div>
+    <div id={styles.calculator} className="text-center">
+      <input type="text" id={styles.display}/>
+      <div id={styles.buttons}>
+        {buttons.map((button, index) =>{
+          return <button key={index} id={styles.button}>{button}</button>
+        })}
+      </div> 
     </div>
   );
 }
