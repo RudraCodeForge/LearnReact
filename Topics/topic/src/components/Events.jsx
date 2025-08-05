@@ -2,7 +2,7 @@ import styles from './Events.module.css';
 
 const Events = () => {
   let arr =["Apple","Banana","Orange","Green Vegetables"];
-  const HandleEvents =(e)=>{
+  const HandleEvents =(e, item)=>{
     console.log(e);
     console.log(`${item} add on cart successfully`);
   }
@@ -16,7 +16,7 @@ const Events = () => {
         {arr.map((item, index) =>{
           return <li className="list-group-item" key={index}>
             {item}
-            <button className={`btn-primary ${styles.btn}`} onClick={(e) => HandleEvents(e)}>Buy now</button>
+            <button className={`btn-primary ${styles.btn}`} onClick={(e) => HandleEvents(e, item)}>Buy now</button>
           </li>
         })}
       </ul>
