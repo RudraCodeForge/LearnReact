@@ -42,3 +42,12 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd Projects/Calculator && npm run dev"
+
+[[workflows.workflow]]
+name = "Topics"
+mode = "sequential"
+author = 33217820
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Topics/topic && npm run dev"
