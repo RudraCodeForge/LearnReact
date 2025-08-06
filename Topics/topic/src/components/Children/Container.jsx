@@ -1,4 +1,4 @@
 const Container = (props) => {
-  return <div> {props.children}</div>;
+  return <div classNmae="container my-4"> {props.children}</div>;
 };
 export default Container;

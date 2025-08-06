@@ -35,15 +35,6 @@ externalPort = 3000
 runButton = "Run Calculator"
 
 [[workflows.workflow]]
-name = "Run Calculator"
-author = 33217820
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd Projects/Calculator && npm run dev"
-
-[[workflows.workflow]]
 name = "Topics"
 mode = "sequential"
 author = 33217820
@@ -51,3 +42,30 @@ author = 33217820
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd Topics/topic && npm run dev"
+
+[[workflows.workflow]]
+name = "Run TODO"
+mode = "sequential"
+author = 33217820
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Projects/TO-DO-VERSION1 && npm run dev"
+
+[[workflows.workflow]]
+name = "Run Clock"
+mode = "sequential"
+author = 33217820
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Projects/Bharat-Clock && npm run dev"
+
+[[workflows.workflow]]
+name = "Run Calculator "
+mode = "sequential"
+author = 33217820
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Projects/Calculator && npm run dev"

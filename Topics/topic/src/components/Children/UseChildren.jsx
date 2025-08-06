@@ -4,8 +4,8 @@ const UseChildren = () => {
   return (
     <Container>
       <h1 className="text-center">CHILDREN PROPS</h1>
-      <ol>
-        <li>
+      <ol className="m-2">
+        <li >
           <span className={styles.First}>Children </span>are special prop for
           using the passing elements into components
         </li>
