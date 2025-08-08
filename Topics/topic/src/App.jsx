@@ -4,6 +4,7 @@ import Condition from './components/Condition';
 import REACT_PROPS from './components/props/REACT_PROPS'
 import UseChildren from './components/Children/UseChildren';
 import Events from './components/Events';
+import Parant from './components/Passing_Function/Parant';
 
 import './App.css';
 import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
@@ -17,6 +18,7 @@ const App = () =>{
       <Dynamic_Css/>
       <UseChildren/>
       <Events/>
+      <Parant/>
     </>
   )
 }
