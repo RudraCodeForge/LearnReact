@@ -1,5 +1,8 @@
-
 const TodoList = (props) => {
+  const DeleteTodo = () => {
+    props.REMOVETODO(props.index); // 👈 index ka use karo
+  };
+
   return (
     <div className="todo-item">
       <div className="row align-items-center">
@@ -25,7 +28,9 @@ const TodoList = (props) => {
           </div>
         </div>
         <div className="col-md-2 text-end">
-          <button className="btn btn-delete">
+          <button 
+            onClick={DeleteTodo}
+            className="btn btn-delete">
             <i className="fas fa-trash me-1"></i>Delete
           </button>
         </div>

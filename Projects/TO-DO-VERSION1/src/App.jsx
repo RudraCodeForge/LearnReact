@@ -2,13 +2,18 @@ import AppName from "./components/AppName";
 import AddToDo from "./components/AddToDo";
 import TodoList from "./components/TodoList";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
-  let TODO = [
-    { task: "BUY MILK", date: "12/02/2005" },
-    { task: "LEARN REACT", date: "25/05/2025" },
-    { task: "Complete Bootstrap Design", date: "15/09/2024" },
-  ];
+  const [TODO, setTODO] = useState([
+    { task: "Learn React", date: "2023-10-25" },
+  ]);
+  const ADDTODO = (task, date) => {
+    setTODO([...TODO, { task: task, date: date }]);
+  };
+  const REMOVETODO = (index) => {
+    setTODO(TODO.filter((_, i) => i !== index));
+  };
   return (
     <div
       className="min-vh-100"
@@ -21,12 +26,17 @@ function App() {
           <div className="col-12">
             <div className="todo-container">
               <AppName />
-              <AddToDo />
+              <AddToDo ADDTODO={ADDTODO} />
               <div className="todo-list">
-                {TODO.map((item) => {
-                  console.log(item.task,item.date);
-                  return <TodoList task={item.task} date={item.date} key={item.task} />;
-                })}
+                {TODO.map((item, index) => (
+                  <TodoList
+                    task={item.task}
+                    date={item.date}
+                    index={index} // 👈 index bhejo
+                    REMOVETODO={REMOVETODO}
+                    key={index}
+                  />
+                ))}
               </div>
               <div className="empty-state">
                 <i className="fas fa-tasks me-2"></i>
