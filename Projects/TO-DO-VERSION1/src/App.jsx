@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [TODO, setTODO] = useState([
-    { task: "Learn React", date: "2023-10-25" },
   ]);
   const ADDTODO = (task, date) => {
     setTODO([...TODO, { task: task, date: date }]);
