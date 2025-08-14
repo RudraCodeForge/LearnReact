@@ -22,6 +22,28 @@ const Working = () =>{
         <li>It's identified the specific node that need updated.</li>
         <li>Only these node are updated in the real browser DOM, making it efficient.</li>
       </ol>
+      <h3 className="First">REACT AND REACT-DOM</h3>
+      <ol>
+        <li>The actual updating in browser's DOM isn't done by react itself.</li>
+        <li>Its handle by campanion library called react-dom</li>
+      </ol>
+      <h3 className="First">ROOT ELEMENT</h3>
+      <ol>
+        <li>The root div work like as a container for a react app.</li>
+        <li>The script tag where the react app start executing.</li>
+        <li>If you check the main.tsx. The component tree is rendered inside this root element.</li>
+      </ol>
+      <h3 className="First">STRICT MODE COMPONENT</h3>
+      <ol>
+        <li>It is a special component in react.</li>
+        <li>Doesn't have vasiual representation.</li>
+        <li>It's purpose to detect the potential issue in your react app.</li>
+      </ol>
+      <h3 className="First">PLATFORM INDEPENDENT</h3>
+      <ol>
+        <li>React's design allow it to be a agnostic</li>
+        <li>While react-dom helps bulid web UI using react, ReactNative can used to be craft mobile app UI.</li>
+      </ol>
     </div>
   )
 }
