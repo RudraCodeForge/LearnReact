@@ -4,7 +4,14 @@ const Parant = () =>{
     alert("Child pass the response to parent");
   }
   const SubmitHandler = (FormData)=>{
-    alert(`${FormData} Bhai Ram Ram 🙏🙏`);
+    if(FormData.toLowerCase() ==="pooja" || FormData.toLowerCase() === "vidhi")
+    {
+      alert(`${FormData} I LOVE YOU INFINITELY 💕💕❤️❤️😘😘`)
+    }
+    else{
+      alert(`${FormData} Ram Ram 🙏🙏`);
+    }
+    
   }
   return(
     <>
