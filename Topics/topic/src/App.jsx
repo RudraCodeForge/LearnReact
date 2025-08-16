@@ -8,6 +8,8 @@ import Parant from './components/Passing_Function/Parant';
 import STATES from './components/states/STATES';
 import Working from './components/Working';
 import './App.css';
+import Form from './components/Form';
+
 import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
 const App = () =>{
   return(
@@ -22,6 +24,7 @@ const App = () =>{
       <Parant/>
       <STATES/>
       <Working/>
+      <Form/>
     </>
   )
 }
