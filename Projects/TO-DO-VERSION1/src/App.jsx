@@ -8,7 +8,10 @@ function App() {
   const [TODO, setTODO] = useState([
   ]);
   const ADDTODO = (task, date) => {
-    setTODO([...TODO, { task: task, date: date }]);
+    //setTODO([...TODO, { task: task, date: date }]);
+    setTODO((PrevTodo)=>{
+      return [...PrevTodo, { task: task, date: date}]
+    })
   };
   const REMOVETODO = (index) => {
     setTODO(TODO.filter((_, i) => i !== index));

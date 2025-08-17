@@ -1,6 +1,7 @@
 import styles from "./STATE.module.css";
 import USESTATE from "./USESTATE";
 import UseStateImg from "../../assets/UseState.jpg";
+import USEREF from './USEREF';
 const STATES = () => {
   return (
     <div className="container">
@@ -36,6 +37,7 @@ const STATES = () => {
           <span className={styles.First}>React </span> function start with use are hooks. Ex:- useState, useEffect, useContext, useRef, useReducer, useCallback, useMemo, useLayoutEffect, useDebugValue, useDeferredValue, useTransition, useId, useImperativeHandle, useSyncExternalStore, useInsertionEffect.
         </li>
       </ol>
+      <USEREF/>
     </div>
   );
 };
