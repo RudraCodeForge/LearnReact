@@ -9,7 +9,7 @@ import STATES from './components/states/STATES';
 import Working from './components/Working';
 import './App.css';
 import Form from './components/Form';
-
+import Context_Api from './components/CONTEXT/Context_Api';
 import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
 const App = () =>{
   return(
@@ -25,6 +25,7 @@ const App = () =>{
       <STATES/>
       <Working/>
       <Form/>
+      <Context_Api/>
     </>
   )
 }
