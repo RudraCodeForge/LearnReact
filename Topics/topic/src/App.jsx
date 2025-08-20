@@ -8,6 +8,7 @@ import Parant from './components/Passing_Function/Parant';
 import STATES from './components/states/STATES';
 import Working from './components/Working';
 import './App.css';
+import REDUCER_APP from './components/Reducer/REDUCER_APP';
 import Form from './components/Form';
 import Context_Api from './components/CONTEXT/Context_Api';
 import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
@@ -26,6 +27,7 @@ const App = () =>{
       <Working/>
       <Form/>
       <Context_Api/>
+      <REDUCER_APP/>
     </>
   )
 }
