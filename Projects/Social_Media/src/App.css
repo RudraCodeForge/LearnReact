@@ -1,0 +1,33 @@
+.sidebar{
+  min-width:40%;
+  height:100vh;
+  background-color:grey;
+}
+.sbtn{
+  color:white;
+}
+.shcon{
+  display: flex;
+}
+.Post{
+  margin-bottom:10px;
+  border:2px solid black;
+}
+.reactions{
+  display:flex;
+  justify-content:space-between;
+}
+.ba{
+  margin:0 5px;
+}
+.like{
+  color:red;
+}
+.dislike{
+  color:blue;
+}
+.Active{
+  width:90%;
+  margin:5px;
+  background-color:blue;
+}

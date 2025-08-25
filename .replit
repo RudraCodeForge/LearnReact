@@ -26,7 +26,6 @@ externalPort = 3002
 [[ports]]
 localPort = 5173
 externalPort = 80
-exposeLocalhost = true
 
 [[ports]]
 localPort = 5174
@@ -70,3 +69,12 @@ author = 33217820
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd Projects/Calculator && npm run dev"
+
+[[workflows.workflow]]
+name = "Social_Media"
+mode = "sequential"
+author = 33217820
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd Projects/Social_Media && npm run dev"
