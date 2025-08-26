@@ -1,24 +1,28 @@
 import Welcome from "./Welcome";
+import Spinner from "./Spinner";
 import { usePostContext } from "../store/PostContext";
 import Post from "./Post";
+
 const PostList = () => {
-  const { posts } = usePostContext();
+  const { posts, loading } = usePostContext();
+
   return (
     <div className="PostList">
-      {posts.length === 0 ? (
+      {loading && <Spinner />}
+      {!loading && posts.length === 0 ? (
         <Welcome />
       ) : (
-        posts.map((posts) => {
+        posts.map((post) => {
           return (
             <Post
-              key={posts.id}
-              id={posts.id}
-              title={posts.title}
-              discription={posts.body}
-              tags={posts.tags}
-              reactions={posts.reactions}
-              views={posts.views}
-              userId={posts.userId}
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              discription={post.body}
+              tags={post.tags}
+              reactions={post.reactions}
+              views={post.views}
+              userId={post.userId}
             />
           );
         })
@@ -26,4 +30,5 @@ const PostList = () => {
     </div>
   );
 };
+
 export default PostList;

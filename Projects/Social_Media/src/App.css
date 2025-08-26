@@ -10,7 +10,8 @@
   display: flex;
 }
 .Post{
-  margin-bottom:10px;
+  position:relative;
+  margin:0 10px 10px 0;
   border:2px solid black;
 }
 .reactions{

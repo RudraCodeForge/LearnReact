@@ -1,5 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
-
+import { createContext, useContext, useReducer, useEffect ,useState } from "react";
 
 // Reducer function
 const PostReducer = (currentPosts, action) => {
@@ -9,7 +8,7 @@ const PostReducer = (currentPosts, action) => {
     case "DELETE":
       return currentPosts.filter((post) => post.id !== action.payload);
     case "FATCH":
-      return currentPosts = action.payload;
+      return action.payload;
     default:
       return currentPosts;
   }
@@ -20,8 +19,14 @@ const PostContext = createContext();
 
 // Provider
 export const PostProvider = ({ children }) => {
+  useEffect(() => {
+    FatchPosts();
+  }, []);
+
   const [posts, dispatch] = useReducer(PostReducer, []);
 
+  const [loading, setLoading] = useState(true);
+  
   // Add post
   const addPost = (post) => {
     dispatch({ type: "ADD", payload: post });
@@ -32,13 +37,18 @@ export const PostProvider = ({ children }) => {
     dispatch({ type: "DELETE", payload: id });
   };
 
-  // fatch posts
-  const FatchPosts = (InitialPosts)=>{
-    dispatch({type:"FATCH", payload:InitialPosts})
-  }
-
+  // Fatch post
+  const FatchPosts = () => {
+    setLoading(true);
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({ type: "FATCH", payload: data.posts });
+        setLoading(false);
+      });
+  };
   return (
-    <PostContext.Provider value={{ posts,FatchPosts, addPost, deletePost }}>
+    <PostContext.Provider value={{ loading, posts, FatchPosts, addPost, deletePost }}>
       {children}
     </PostContext.Provider>
   );
