@@ -8,9 +8,9 @@ const REACT_PROPS = () => {
       <div className="container my-4">
         <h1 className="text-center mb-4 ">PROPS</h1>
         <PASS_DATA items={arr} />
-        <p className="text-justify">
+        <div className="text-justify">
           <ol>
-            <lh>WHAT IS PROPS IN REACT ?</lh>
+            <h3>WHAT IS PROPS IN REACT ?</h3>
             <li>
               Props are arguments passed into React components. Props are
               passed to components via HTML attributes. Props stands for
@@ -29,7 +29,7 @@ const REACT_PROPS = () => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb_6cYzsrEAEZsDHBLrti3qyu0B0L0B7dU3ljj6n9eoe5qPzYNU5Fm_gZO&s=10" alt="props" className="propsimg" />
           <br/>
           <ol>
-            <lh>USAGE OF PROPS</lh>
+            <h3>USAGE OF PROPS</h3>
             <li>
               Pass data from parants to child
             </li>
@@ -45,7 +45,7 @@ const REACT_PROPS = () => {
           </ol>
           <br/>
           <ol>
-            <lh>KEY POINTS OF PROPS</lh>
+            <h3>KEY POINTS OF PROPS</h3>
             <li>
               Data Flows One way (Downward)
             </li>
@@ -56,7 +56,7 @@ const REACT_PROPS = () => {
               Used For Communication Between components
             </li>
           </ol>
-        </p>
+        </div>
       </div>
     </>
   );
