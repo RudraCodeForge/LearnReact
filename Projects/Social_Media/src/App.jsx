@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Hero from "./components/Hero";
+import { PostProvider } from "./store/PostContext";
 import { SelectContextProvider } from "./store/SelectContext.jsx";
 
 const App = () => {
@@ -11,7 +12,9 @@ const App = () => {
       <div className="shcon">
         <SelectContextProvider>
           <Sidebar />
-          <Hero />
+          <PostProvider>
+            <Hero />
+          </PostProvider>          
         </SelectContextProvider>
       </div>
     </>

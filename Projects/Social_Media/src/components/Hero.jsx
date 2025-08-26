@@ -1,11 +1,12 @@
 import PostList from './PostList';
+import AddPost from './AddPost';
 import { useSelectContext } from '../store/SelectContext';
 const Hero=()=>{
   const {select}=useSelectContext();
   return(
     <div className="Hero">
       {select==="Home"&&<PostList/>}
-      {select==="Create Post"&&<h1>Hello</h1>}
+      {select==="Create Post"&&<AddPost/>}
     </div>
   )
 }
