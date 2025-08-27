@@ -39,13 +39,19 @@ export const PostProvider = ({ children }) => {
 
   // Fatch post
   const FatchPosts = () => {
+    const controller = new AbortController();
+    const signal = controller.signal;
     setLoading(true);
-    fetch("https://dummyjson.com/posts")
+    fetch("https://dummyjson.com/posts",{signal})
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: "FATCH", payload: data.posts });
         setLoading(false);
       });
+    return () => {
+      console.log("Cleanup")
+      controller.abort();
+    }
   };
   return (
     <PostContext.Provider value={{ loading, posts, FatchPosts, addPost, deletePost }}>
