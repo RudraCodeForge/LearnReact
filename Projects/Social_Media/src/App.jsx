@@ -8,25 +8,30 @@ import PostList from "./components/PostList";
 import AddPost from "./components/AddPost";
 import { useSelectContext } from "./store/SelectContext";
 
+const AppContent = () => {
+  const { select } = useSelectContext();
+  return (
+    <div className="app-container">
+      <Header />
+      <Sidebar />
+      <div className="main-content">
+        {select === "Home" && (
+          <>
+            <Hero />
+            <PostList />
+          </>
+        )}
+        {select === "Create Post" && <AddPost />}
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
-  const { selectedTab } = useSelectContext();
   return (
     <SelectProvider>
       <PostProvider>
-        <div className="app-container">
-          <Header />
-          <Sidebar />
-          <div className="main-content">
-            {selectedTab === "Home" && (
-              <>
-                <Hero />
-                <PostList />
-              </>
-            )}
-            {selectedTab === "Create Post" && <AddPost />}
-          </div>
-        </div>
+        <AppContent />
       </PostProvider>
     </SelectProvider>
   );
