@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect ,useState } from "react";
+import { createContext, useContext, useReducer, useEffect ,useState, useCallback} from "react";
 
 // Reducer function
 const PostReducer = (currentPosts, action) => {
@@ -33,9 +33,9 @@ export const PostProvider = ({ children }) => {
   };
 
   // Delete post
-  const deletePost = (id) => {
+  const deletePost = useCallback((id) => {
     dispatch({ type: "DELETE", payload: id });
-  };
+  },[dispatch]);
 
   // Fatch post
   const FatchPosts = () => {
