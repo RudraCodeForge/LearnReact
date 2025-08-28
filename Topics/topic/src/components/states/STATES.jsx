@@ -3,6 +3,7 @@ import USESTATE from "./USESTATE";
 import UseStateImg from "../../assets/UseState.jpg";
 import USEREF from './USEREF';
 import USECALLBACK from './USECALLBACK';
+import USEMEMO from './USEMEMO';
 const STATES = () => {
   return (
     <div className="container">
@@ -40,6 +41,7 @@ const STATES = () => {
       </ol>
       <USEREF/>
       <USECALLBACK/>
+      <USEMEMO/>
     </div>
   );
 };
