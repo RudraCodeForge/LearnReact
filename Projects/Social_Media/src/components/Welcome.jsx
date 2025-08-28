@@ -1,13 +1,9 @@
-
 const Welcome = () => {
   return (
-    <>
-      <h1 className="text-center">WELCOME</h1>
-      <p className="text-center">
-        Currently no post available. Click on the "Get Posts" button to fetch posts
-        from the server.
-      </p>
-    </>
+    <div className="welcome-message">
+      <h2>🎉 Welcome to Social Media Hub! 🎉</h2>
+      <p>No posts available yet. Be the first to share something amazing!</p>
+    </div>
   );
 };
 

@@ -3,21 +3,32 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Hero from "./components/Hero";
 import { PostProvider } from "./store/PostContext";
-import { SelectContextProvider } from "./store/SelectContext.jsx";
+import { SelectContextProvider as SelectProvider } from "./store/SelectContext.jsx";
+import PostList from "./components/PostList";
+import AddPost from "./components/AddPost";
+import { useSelectContext } from "./store/SelectContext";
+
 
 const App = () => {
+  const { selectedTab } = useSelectContext();
   return (
-    <>
-      <Header />
-      <div className="shcon">
-        <SelectContextProvider>
+    <SelectProvider>
+      <PostProvider>
+        <div className="app-container">
+          <Header />
           <Sidebar />
-          <PostProvider>
-            <Hero />
-          </PostProvider>          
-        </SelectContextProvider>
-      </div>
-    </>
+          <div className="main-content">
+            {selectedTab === "Home" && (
+              <>
+                <Hero />
+                <PostList />
+              </>
+            )}
+            {selectedTab === "Create Post" && <AddPost />}
+          </div>
+        </div>
+      </PostProvider>
+    </SelectProvider>
   );
 };
 export default App;

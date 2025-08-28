@@ -1,31 +1,26 @@
 import {usePostContext} from "../store/PostContext"
-const Post = (props) => {
-  const {deletePost} = usePostContext();
-  const HandleDelete = (id) =>{
-    deletePost(id);
-  }
+const Post = ({ post }) => {
+  const { deletePost } = usePostContext();
+
   return (
-    <div className="Post container">
-      <h2>{props.userId}</h2>
-      <h4>{props.title}</h4>
-      <p>{props.discription}</p>
-      <div className="reactions">
-        <span className="like">Likes : {props.reactions.likes}</span>
-        <span className="dislike">Dislikes : {props.reactions.dislikes}</span>
-      </div>
-      <p className="views">Total {props.views} people view this post</p>
-      {props.tags.map((tag, index) => {
-        return (
-          <span key={index} className="badge text-bg-primary ba">
-            {tag}
+    <div className="post">
+      <h3>{post.title}</h3>
+      <p>{post.body}</p>
+      <div className="post-meta">
+        <div className="post-tags">
+          {post.tags.map((tag, index) => (
+            <span key={index} className="tag">#{tag}</span>
+          ))}
+        </div>
+        <div>
+          <span style={{ marginRight: '15px', color: '#666' }}>
+            👍 {post.reactions.likes} ❤️ {post.reactions.dislikes}
           </span>
-        );
-      })}
-      <button 
-        className="btn btn-danger m-2"
-        onClick={()=>HandleDelete(props.id)}>
-        Delete
-      </button>
+          <button className="delete-btn" onClick={() => deletePost(post.id)}>
+            🗑️ Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

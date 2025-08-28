@@ -1,21 +1,8 @@
 const Header = () => {
   return (
-    <nav className="navbar bg-body-tertiary">
-      <form className="container-fluid">
-        <div className="input-group">
-          <span className="input-group-text" id="basic-addon1">
-            @
-          </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-      </form>
-    </nav>
+    <header className="header">
+      <h1>🌟 Social Media Hub 🌟</h1>
+    </header>
   );
 };
 export default Header;
