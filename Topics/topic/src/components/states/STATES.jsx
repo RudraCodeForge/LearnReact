@@ -4,6 +4,7 @@ import UseStateImg from "../../assets/UseState.jpg";
 import USEREF from './USEREF';
 import USECALLBACK from './USECALLBACK';
 import USEMEMO from './USEMEMO';
+import CUSTOM_HOOK from './CUSTOM_HOOK';
 const STATES = () => {
   return (
     <div className="container">
@@ -42,6 +43,7 @@ const STATES = () => {
       <USEREF/>
       <USECALLBACK/>
       <USEMEMO/>
+      <CUSTOM_HOOK/>
     </div>
   );
 };
