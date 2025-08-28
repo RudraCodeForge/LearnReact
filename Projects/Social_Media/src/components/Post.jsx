@@ -1,11 +1,11 @@
 import {usePostContext} from "../store/PostContext"
-const Post = ({ post }) => {
+const Post = (post) => {
   const { deletePost } = usePostContext();
 
   return (
     <div className="post">
       <h3>{post.title}</h3>
-      <p>{post.body}</p>
+      <p>{post.discription}</p>
       <div className="post-meta">
         <div className="post-tags">
           {post.tags.map((tag, index) => (

@@ -1,7 +1,5 @@
 import { useRef } from "react";
 
-import { useRef } from "react";
-
 const USEREF = () => {
   const Name = useRef();
 

@@ -88,6 +88,9 @@ body {
   box-shadow: 0 5px 15px rgba(76, 99, 210, 0.4);
 }
 
+.sbtn{
+  margin:5px;
+}
 /* Main Content Area */
 .main-content {
   background: rgba(255, 255, 255, 0.95);

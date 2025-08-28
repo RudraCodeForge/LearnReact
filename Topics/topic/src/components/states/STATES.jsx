@@ -2,6 +2,7 @@ import styles from "./STATE.module.css";
 import USESTATE from "./USESTATE";
 import UseStateImg from "../../assets/UseState.jpg";
 import USEREF from './USEREF';
+import USECALLBACK from './USECALLBACK';
 const STATES = () => {
   return (
     <div className="container">
@@ -38,6 +39,7 @@ const STATES = () => {
         </li>
       </ol>
       <USEREF/>
+      <USECALLBACK/>
     </div>
   );
 };
