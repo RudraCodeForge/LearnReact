@@ -1,3 +1,6 @@
+import PostList from './PostList';
+import AddPost from './AddPost';
+import { useSelectContext } from '../store/SelectContext';
 const Hero = () => {
   return (
     <div className="hero">

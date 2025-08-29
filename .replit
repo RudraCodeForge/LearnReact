@@ -32,6 +32,10 @@ localPort = 5001
 externalPort = 3003
 
 [[ports]]
+localPort = 5173
+externalPort = 80
+
+[[ports]]
 localPort = 5174
 externalPort = 3000
 
@@ -96,10 +100,6 @@ args = "React App"
 task = "workflow.run"
 args = "Topics Learning Hub"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Social Media Hub"
-
 [[workflows.workflow]]
 name = "React App"
 author = "agent"
@@ -119,18 +119,6 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd Topics/topic && npm run dev"
-waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[workflows.workflow]]
-name = "Social Media Hub"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd Projects/Social_Media && npm run dev"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
