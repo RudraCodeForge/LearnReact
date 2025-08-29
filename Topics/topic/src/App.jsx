@@ -13,7 +13,8 @@ import REDUCER_APP from './components/Reducer/REDUCER_APP';
 import Form from './components/Form';
 import Context_Api from './components/CONTEXT/Context_Api';
 import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
-import FatchingData from './components/FatchingData'
+import FatchingData from './components/FatchingData';
+import React_Router from './components/React_Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () =>{
@@ -33,7 +34,8 @@ const App = () =>{
     { id: 'Context_Api', name: 'Context API', component: <Context_Api/>, icon: '🌐' },
     { id: 'REDUCER_APP', name: 'useReducer Hook', component: <REDUCER_APP/>, icon: '🔄' },
     { id: 'Dynamic_Css', name: 'Dynamic CSS', component: <Dynamic_Css/>, icon: '🎨' },
-    { id: 'FatchingData', name: 'Data Fetching', component: <FatchingData/>, icon: '📡' }
+    { id: 'FatchingData', name: 'Data Fetching', component: <FatchingData/>, icon: '📡' },
+    { id: 'React_Router', name: 'React Router', component: <React_Router/>, icon: '🛣️' }
   ];
 
   const currentTopic = topics.find(topic => topic.id === activeComponent);
