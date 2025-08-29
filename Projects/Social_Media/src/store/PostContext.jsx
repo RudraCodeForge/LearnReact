@@ -4,7 +4,7 @@ import { createContext, useContext, useReducer, useEffect ,useState, useCallback
 const PostReducer = (currentPosts, action) => {
   switch (action.type) {
     case "ADD":
-      return [...currentPosts, action.payload];
+      return [action.payload, ...currentPosts];
     case "DELETE":
       return currentPosts.filter((post) => post.id !== action.payload);
     case "FATCH":
