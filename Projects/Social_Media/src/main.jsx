@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import App from "./Routes/App.jsx";
 import PostList from "./components/PostList";
 import AddPost from "./components/AddPost";
-
+import { FatchPosts } from "./components/PostList";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <PostList />,
+        loader: FatchPosts,
       },
       {
         path: "add-post",

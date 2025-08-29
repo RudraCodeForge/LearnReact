@@ -2,14 +2,20 @@ import Welcome from "./Welcome";
 import Spinner from "./Spinner";
 import { usePostContext } from "../store/PostContext";
 import Post from "./Post";
-
+import {useLoaderData} from "react-router-dom";
 const PostList = () => {
-  const { posts, loading } = usePostContext();
-
+  const {loading, setLoading} = usePostContext();
+  const posts = useLoaderData();
+  
+  // Set loading false when posts are loaded
+  if (loading && posts) {
+    setLoading(false);
+  }
+  
   return (
     <div className="PostList">
       {loading && <Spinner />}
-      {!loading && posts.length === 0 ? (
+      {posts.length === 0 ? (
         <Welcome />
       ) : (
         posts.map((post) => {
@@ -31,4 +37,12 @@ const PostList = () => {
   );
 };
 
+export const FatchPosts = () =>{
+  return fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        return data.posts;
+      });
+}
 export default PostList;
+
