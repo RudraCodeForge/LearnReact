@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import App from "./Routes/App.jsx";
 import PostList from "./components/PostList";
 import AddPost from "./components/AddPost";
-import { FatchPosts } from "./components/PostList";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +15,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <PostList />,
-        loader: FatchPosts,
       },
       {
         path: "add-post",
@@ -26,15 +25,6 @@ const router = createBrowserRouter([
 ], { basename: "/LearnReact/social_media" });
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider 
-      router={router} 
-      hydrateFallback={
-        <div className="d-flex justify-content-center align-items-center vh-100">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      }
-    />
+    <RouterProvider router={router} />
   </StrictMode>,
 );

@@ -3,7 +3,7 @@ import { usePostContext } from "../store/PostContext";
 import ALERT from "./ALERT";
 import {useNavigate} from "react-router-dom";
 const AddPost = () => {
-  const { addPost, loading, setLoading } = usePostContext();
+  const { addPost } = usePostContext();
   const navigate = useNavigate();
   const [showAlert, setShowAlert] = useState(false);
   const [alertData, setAlertData] = useState({});
@@ -20,7 +20,6 @@ const AddPost = () => {
       setShowAlert(true);
       return;
     } else {
-      setLoading(true); // 🚀 Loading start
       fetch("https://dummyjson.com/posts/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -40,28 +39,17 @@ const AddPost = () => {
         .then((res) => res.json())
         .then((Object) => {
           addPost(Object);
-          setLoading(false); // ✅ Loading stop
-          
-          // Show success alert
-          setAlertData({ name: "SUCCESS", body: "Post added successfully!", type: "success" });
-          setShowAlert(true);
-          
-          // Clear form after success
-          titleRef.current.value = "";
-          bodyRef.current.value = "";
-          tagsRef.current.value = "";
-          userIdRef.current.value = "";
-          
-          // Navigate after a delay so user can see the success message
-          setTimeout(() => {
-            navigate("/");
-          }, 1500);
-        })
-        .catch((error) => {
-          setLoading(false); // ❌ Loading stop on error
-          setAlertData({ name: "ERROR", body: "Failed to add post. Please try again!", type: "danger" });
-          setShowAlert(true);
+          navigate("/");
         });
+      // clear inputs
+      titleRef.current.value = "";
+      bodyRef.current.value = "";
+      tagsRef.current.value = "";
+      userIdRef.current.value = "";
+      
+      // Show success alert
+      setAlertData({ name: "SUCCESS", body: "Post added successfully!", type: "success" });
+      setShowAlert(true);
     }
 
     /*addPost(newPost);*/
@@ -130,19 +118,8 @@ const AddPost = () => {
           />
         </div>
 
-        <button 
-          type="submit" 
-          className="btn btn-primary w-100" 
-          disabled={loading}
-        >
-          {loading ? (
-            <>
-              <span className="spinner-border spinner-border-sm me-2" role="status"></span>
-              Adding Post...
-            </>
-          ) : (
-            "Add Post"
-          )}
+        <button type="submit" className="btn btn-primary w-100">
+          Add Post
         </button>
       </form>
     </div>
