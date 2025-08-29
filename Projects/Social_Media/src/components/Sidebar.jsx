@@ -1,21 +1,16 @@
-import {useSelectContext} from "../store/SelectContext";
-const Sidebar=()=>{
-  const {select,setSelect}=useSelectContext();
-  const ClickHandle=(value)=>{
-    setSelect(value);
-  }
+import { Link, useLocation } from "react-router-dom";
+
+const Sidebar = () => {
+  const location = useLocation();
+  
   return(
     <div className="sidebar">
-      <button 
-        className={`btn sbtn ${select==="Home"&&"Active"}`}
-        onClick={()=>ClickHandle("Home")}>
+      <Link to="/" className={`btn sbtn ${location.pathname === "/" ? "Active" : ""}`}>
         Home
-      </button>
-      <button 
-        className={`btn sbtn ${select==="Create Post"&&"Active"}`}
-        onClick={()=>ClickHandle("Create Post")}>
+      </Link>
+      <Link to="/add-post" className={`btn sbtn ${location.pathname === "/add-post" ? "Active" : ""}`}>
         Create Post
-      </button>
+      </Link>
     </div>
   )
 }
