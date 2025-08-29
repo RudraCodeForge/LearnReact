@@ -18,7 +18,7 @@ const Events = () => {
             <li className="list-group-item" key={index}>
               {item}
               <button
-                className={`btn-primary ${styles.btn}`}
+                className={`btn btn-primary btn-sm ${styles.btn}`}
                 onClick={(e) => HandleEvents(e, item)}
               >
                 Buy now
@@ -49,7 +49,7 @@ const Events = () => {
         <b>-: THERE ARE BASICALLY 10 TYPES OF EVENTS IN REACT :-</b>
       </p>
       <h3>1. MOUSE EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -92,7 +92,7 @@ const Events = () => {
       </table>
       <br></br>
       <h3>2. KEYBOARD EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -120,7 +120,7 @@ const Events = () => {
       </table>
       <br></br>
       <h3>3. FORM EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -158,7 +158,7 @@ const Events = () => {
       </table>
       <br />
       <h3>4. CLIPBOARD EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -186,7 +186,7 @@ const Events = () => {
       </table>
       <br />
       <h3>5. FOCUS EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -209,7 +209,7 @@ const Events = () => {
       </table>
       <br />
       <h3>6. COMPOSITION EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -237,7 +237,7 @@ const Events = () => {
       </table>
       <br />
       <h3>7. TOUCH EVENTS (MOBILE)</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -270,7 +270,7 @@ const Events = () => {
       </table>
       <br />
       <h3>8. POINTER EVENTS (Modern Alternative to mouse/touch)</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -308,7 +308,7 @@ const Events = () => {
       </table>
       <br />
       <h3>9. UI EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
@@ -333,7 +333,7 @@ const Events = () => {
       </table>
       <br />
       <h3>10. MEDIA EVENTS</h3>
-      <table class="table">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">S.NO</th>
