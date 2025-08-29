@@ -78,3 +78,6 @@ author = 33217820
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd Projects/Social_Media && npm run dev"
+
+[agent]
+expertMode = true
