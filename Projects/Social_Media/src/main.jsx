@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
     ],
   }
-], { basename: "/LearnReact/social_media" });
+], { basename: "/social_media" });
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
