@@ -3,14 +3,17 @@ import Spinner from "./Spinner";
 import { usePostContext } from "../store/PostContext";
 import Post from "./Post";
 import {useLoaderData} from "react-router-dom";
+import { useEffect } from "react";
 const PostList = () => {
   const {loading, setLoading} = usePostContext();
   const posts = useLoaderData();
   
-  // Set loading false when posts are loaded
-  if (loading && posts) {
-    setLoading(false);
-  }
+  // ✅ CORRECT: Use useEffect instead of direct setState in render
+  useEffect(() => {
+    if (loading && posts && posts.length >= 0) {
+      setLoading(false);
+    }
+  }, [loading, posts, setLoading]);
   
   return (
     <div className="PostList">
