@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { usePostContext } from "../store/PostContext";
-
+import ALERT from "./ALERT";
 const AddPost = () => {
   const { addPost } = usePostContext();
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertData, setAlertData] = useState({});
 
   const titleRef = useRef();
   const bodyRef = useRef();
@@ -11,37 +13,58 @@ const AddPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (userIdRef.current.value > 100) {
+      setAlertData({ name: "ADD POST", body: "USER ID MUST BE LESS THAN OR EQUAL TO 100", type: "danger" });
+      setShowAlert(true);
+      return;
+    } else {
+      fetch("https://dummyjson.com/posts/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: titleRef.current.value,
+          body: bodyRef.current.value,
+          tags: tagsRef.current.value
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter((tag) => tag !== ""),
+          reactions: { likes: 0, dislikes: 0 },
+          views: 0,
+          userId: parseInt(userIdRef.current.value) || 0,
+          /* other post data */
+        }),
+      })
+        .then((res) => res.json())
+        .then((Object) => {
+          addPost(Object);
+        });
 
-    fetch("https://dummyjson.com/posts/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: titleRef.current.value,
-        body: bodyRef.current.value,
-        tags: tagsRef.current.value
-          .split(",")
-          .map((tag) => tag.trim())
-          .filter((tag) => tag !== ""),
-        reactions: { likes: 0, dislikes: 0 },
-        views: 0,
-        userId: parseInt(userIdRef.current.value) || 0,
-        /* other post data */
-      }),
-    })
-      .then((res) => res.json())
-      .then((Object)=>{addPost(Object)});
+      // clear inputs
+      titleRef.current.value = "";
+      bodyRef.current.value = "";
+      tagsRef.current.value = "";
+      userIdRef.current.value = "";
+      
+      // Show success alert
+      setAlertData({ name: "SUCCESS", body: "Post added successfully!", type: "success" });
+      setShowAlert(true);
+    }
 
     /*addPost(newPost);*/
-    // clear inputs
-    titleRef.current.value = "";
-    bodyRef.current.value = "";
-    tagsRef.current.value = "";
-    userIdRef.current.value = "";
   };
 
   return (
     <div className="container mt-4">
       <h3 className="mb-3">Add New Post</h3>
+      
+      {showAlert && (
+        <ALERT 
+          name={alertData.name}
+          body={alertData.body}
+          type={alertData.type}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
       <form
         onSubmit={handleSubmit}
         className="p-3 border rounded shadow-sm bg-light"
