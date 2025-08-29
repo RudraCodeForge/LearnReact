@@ -12,6 +12,19 @@ const AddPost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const newPost = {
+      id: Date.now(), // unique id
+      title: titleRef.current.value,
+      body: bodyRef.current.value,
+      tags: tagsRef.current.value
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag !== ""),
+      reactions: { likes: 0, dislikes: 0 },
+      views: 0,
+      userId: parseInt(userIdRef.current.value) || 0,
+    };
+
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
