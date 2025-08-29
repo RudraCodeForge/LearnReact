@@ -1,6 +1,6 @@
 const TodoList = (props) => {
   const DeleteTodo = () => {
-    props.REMOVETODO(props.index); // 👈 index ka use karo
+    props.REMOVETODO(props.id);
   };
 
   return (

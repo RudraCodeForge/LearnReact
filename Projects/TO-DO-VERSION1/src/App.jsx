@@ -8,13 +8,12 @@ function App() {
   const [TODO, setTODO] = useState([
   ]);
   const ADDTODO = (task, date) => {
-    //setTODO([...TODO, { task: task, date: date }]);
     setTODO((PrevTodo)=>{
-      return [...PrevTodo, { task: task, date: date}]
+      return [...PrevTodo, { id: Date.now() + Math.random(), task: task, date: date}]
     })
   };
-  const REMOVETODO = (index) => {
-    setTODO(TODO.filter((_, i) => i !== index));
+  const REMOVETODO = (id) => {
+    setTODO(TODO.filter((item) => item.id !== id));
   };
   return (
     <div
@@ -30,13 +29,13 @@ function App() {
               <AppName />
               <AddToDo ADDTODO={ADDTODO} />
               <div className="todo-list">
-                {TODO.map((item, index) => (
+                {TODO.map((item) => (
                   <TodoList
                     task={item.task}
                     date={item.date}
-                    index={index} // 👈 index bhejo
+                    id={item.id}
                     REMOVETODO={REMOVETODO}
-                    key={index}
+                    key={item.id}
                   />
                 ))}
               </div>
