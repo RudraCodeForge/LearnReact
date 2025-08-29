@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { usePostContext } from "../store/PostContext";
 import ALERT from "./ALERT";
+import {useNavigate} from "react-router-dom";
 const AddPost = () => {
   const { addPost } = usePostContext();
+  const navigate = useNavigate();
   const [showAlert, setShowAlert] = useState(false);
   const [alertData, setAlertData] = useState({});
 
@@ -37,8 +39,8 @@ const AddPost = () => {
         .then((res) => res.json())
         .then((Object) => {
           addPost(Object);
+          navigate("/");
         });
-
       // clear inputs
       titleRef.current.value = "";
       bodyRef.current.value = "";
