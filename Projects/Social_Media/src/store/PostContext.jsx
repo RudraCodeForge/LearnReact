@@ -19,11 +19,11 @@ const PostContext = createContext();
 
 // Provider
 export const PostProvider = ({ children }) => {
-  useEffect(() => {
+ /* useEffect(() => {
     FatchPosts();
-  }, []);
+  }, []);*/
 
-  const [posts, dispatch] = useReducer(PostReducer, []);
+  const [usersposts, dispatch] = useReducer(PostReducer, []);
 
   const [loading, setLoading] = useState(true);
   
@@ -38,7 +38,7 @@ export const PostProvider = ({ children }) => {
   },[dispatch]);
 
   // Fatch post
-  const FatchPosts = () => {
+  /*const FatchPosts = () => {
     const controller = new AbortController();
     const signal = controller.signal;
     setLoading(true);
@@ -52,9 +52,9 @@ export const PostProvider = ({ children }) => {
       console.log("Cleanup")
       controller.abort();
     }
-  };
+  };*/
   return (
-    <PostContext.Provider value={{ loading, posts, FatchPosts, addPost, deletePost }}>
+    <PostContext.Provider value={{ loading, setLoading,usersposts, addPost, deletePost }}>
       {children}
     </PostContext.Provider>
   );
