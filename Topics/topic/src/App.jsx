@@ -16,7 +16,7 @@ import Dynamic_Css from './components/DYNAMIC_CSS/Dynamic_Css';
 import FatchingData from './components/FatchingData';
 import React_Router from './components/React_Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import USELOADERDATA from './components/USELOADERDATA';
 const App = () =>{
   const [activeComponent, setActiveComponent] = useState('Working');
 
@@ -35,7 +35,8 @@ const App = () =>{
     { id: 'REDUCER_APP', name: 'useReducer Hook', component: <REDUCER_APP/>, icon: '🔄' },
     { id: 'Dynamic_Css', name: 'Dynamic CSS', component: <Dynamic_Css/>, icon: '🎨' },
     { id: 'FatchingData', name: 'Data Fetching', component: <FatchingData/>, icon: '📡' },
-    { id: 'React_Router', name: 'React Router', component: <React_Router/>, icon: '🛣️' }
+    { id: 'React_Router', name: 'React Router', component: <React_Router/>, icon: '🛣️' },
+    { id: 'USELOADERDATA', name: 'useLoaderData Hook', component: <USELOADERDATA/>, icon:'🔁'}
   ];
 
   const currentTopic = topics.find(topic => topic.id === activeComponent);
