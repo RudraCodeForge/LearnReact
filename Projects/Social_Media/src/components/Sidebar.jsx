@@ -41,7 +41,6 @@ const Sidebar = () => {
                   <div className="sidebar-label">{item.label}</div>
                   <div className="sidebar-description">{item.description}</div>
                 </div>
-                {isActive && <span className="badge bg-primary rounded-pill">•</span>}
               </div>
             </Link>
           );
@@ -52,7 +51,7 @@ const Sidebar = () => {
         <div className="d-flex align-items-center justify-content-center">
           <small className="text-muted">
             <i className="me-1">⚡</i>
-            Powered by React
+            Developed By Prince Daksh
           </small>
         </div>
       </div>

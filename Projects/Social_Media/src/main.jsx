@@ -7,6 +7,7 @@ import App from "./Routes/App.jsx";
 import PostList from "./components/PostList";
 import AddPost from "./components/AddPost";
 import {FatchPosts}  from "./components/PostList";
+import {AddPostAction} from "./components/AddPost";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       },
       {
         path: "add-post",
-        element: <AddPost />
+        element: <AddPost />,
+        action: AddPostAction
       },
     ],
   }
