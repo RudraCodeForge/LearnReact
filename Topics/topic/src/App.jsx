@@ -18,6 +18,7 @@ import React_Router from './components/React_Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import USELOADERDATA from './components/USELOADERDATA';
 import Actions from './components/Actions';
+import REDUX from './components/Redux';
 const App = () =>{
   const [activeComponent, setActiveComponent] = useState('Working');
 
@@ -38,7 +39,8 @@ const App = () =>{
     { id: 'FatchingData', name: 'Data Fetching', component: <FatchingData/>, icon: '📡' },
     { id: 'React_Router', name: 'React Router', component: <React_Router/>, icon: '🛣️' },
     { id: 'USELOADERDATA', name: 'useLoaderData Hook', component: <USELOADERDATA/>, icon:'🔁'},
-    { id: 'Actions', name: 'useActionData Hook', component: <Actions/>, icon:'🔁'}
+    { id: 'Actions', name: 'useActionData Hook', component: <Actions/>, icon:'🔁'},
+    { id: 'REDUX', name: 'Redux', component: <REDUX/>, icon:'♻️'}
   ];
 
   const currentTopic = topics.find(topic => topic.id === activeComponent);
